@@ -40,5 +40,10 @@ public class Board {
         public void printBoard() {
             // Tahtayı yazdırma
         }
+
+    public Piece getPieceAtSquare(Square square) {
+        // Karedeki taşı getir
+        return null;
+    }
     }
 

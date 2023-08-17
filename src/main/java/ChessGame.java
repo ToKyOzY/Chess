@@ -21,7 +21,7 @@ public class ChessGame {
             boolean validMove = false;
 
             while (!validMove) {
-                move = getPlayerMove(scanner);
+                move = getPlayerMove(scanner, board);
                 validMove = board.isValidMove(move);
 
                 if (!validMove) {
@@ -39,7 +39,7 @@ public class ChessGame {
         scanner.close();
     }
 
-    public static Move getPlayerMove(Scanner scanner) {
+    public static Move getPlayerMove(Scanner scanner, Board board) {
         System.out.print("Başlangıç karesi (örn: a2): ");
         String startInput = scanner.next();
 
@@ -49,6 +49,6 @@ public class ChessGame {
         Square startSquare = new Square(startInput);
         Square endSquare = new Square(endInput);
 
-        return new Move(startSquare, endSquare);
+        return new Move(startSquare, endSquare, board.getPieceAtSquare(startSquare));
     }
 }
